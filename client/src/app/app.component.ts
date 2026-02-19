@@ -1,33 +1,13 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import 'zone.js';
-import { HeaderComponent } from "./layout/header/header.component";
-import { HttpClient } from '@angular/common/http';
-import as from '@angular/common/locales/extra/as';
-import { Product } from './shared/modules/product';
-import { Pagination } from './shared/modules/pagination';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, HeaderComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit {
-  baseUrl = 'https://localhost:5001/api/'
-private http = inject(HttpClient); 
-title = 'Skinet';
-products: Product[] = [];
-
-
-ngOnInit(): void {
-  this.http.get<Pagination<Product>>(this.baseUrl + 'products').subscribe({
-    next: response => this.products = response.data,
-    error: error => console.log(error),
-    complete: () =>console.log('complete')
-  })
-}
-
+export class AppComponent {
+  title = ('skinet');
 
 }

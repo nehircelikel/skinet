@@ -3,22 +3,13 @@
   "version": 1,
   "cli": {
     "packageManager": "npm",
-    "analytics": "d6027f02-dd9d-4f59-87b8-6f75af873827"
+    "analytics": "d225cabc-0dde-4d2e-a913-7d8945947581"
   },
   "newProjectRoot": "projects",
   "projects": {
     "client": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss",
-          "type": "component"
-          
-        },
-        "@schematics/angular:service": {
-          "type": "service"
-        }
-      },
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -69,7 +60,6 @@
             "ssl": true,
             "sslCert": "ssl/localhost.pem",
             "sslKey": "ssl/localhost-key.pem"
-
           },
           "configurations": {
             "production": {
